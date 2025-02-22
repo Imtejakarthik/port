@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES2017", // Compile to modern ECMAScript
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // Include DOM and modern ES features
+    "allowJs": true, // Allow JavaScript files
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "strict": true, // Enable all strict type-checking options
+    "noEmit": true, // Prevent emitting compiled JavaScript files
+    "esModuleInterop": true, // Handle ES modules compatibility
+    "module": "esnext", // Use ES module syntax
+    "moduleResolution": "bundler", // Optimized for modern bundlers like Vite/Webpack
+    "resolveJsonModule": true, // Allow importing JSON modules
+    "isolatedModules": true, // Enforce module boundaries
+    "jsx": "preserve", // Use React JSX transform (React 17+ or Next.js)
+    "incremental": true, // Enable incremental compilation
+    "plugins": [
+      {
+        "name": "next" // Ensure Next.js plugin is loaded
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ] // Alias for clean imports
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ], // Include relevant files
+  "exclude": [
+    "node_modules"
+  ] // Exclude unnecessary directories
+}

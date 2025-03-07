@@ -23,15 +23,15 @@ const footerLinks = {
 
 export default function Footer() {
     return (
-        <footer className="border-t border-black">
+        <footer className="bg-white border-t border-black">
             <div className="max-w-7xl mx-auto px-16 py-16">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
                     <div>
-                        <h3 className="font-bold text-lg mb-4 text-black">Information</h3>
+                        <h3 className="font-bold text-lg mb-4 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">Information</h3>
                         <ul className="space-y-2">
                             {footerLinks.information.map((link) => (
                                 <li key={link.label}>
-                                    <Link href={link.href} className="text-black hover:text-gray-900">
+                                    <Link href={link.href} className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent hover:text-gray-900">
                                         {link.label}
                                     </Link>
                                 </li>
@@ -40,11 +40,11 @@ export default function Footer() {
                     </div>
                 
                     <div>
-                        <h3 className="font-bold text-lg mb-4 text-black">Legal</h3>
+                        <h3 className="font-bold text-lg mb-4 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">Legal</h3>
                         <ul className="space-y-2">
                             {footerLinks.legal.map((link) => (
                                 <li key={link.label}>
-                                    <Link href={link.href} className="text-black hover:text-gray-900">
+                                    <Link href={link.href} className="bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent hover:text-gray-900">
                                         {link.label}
                                     </Link>
                                 </li>
@@ -52,8 +52,8 @@ export default function Footer() {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="font-bold text-lg mb-4 text-black">Got a project in mind?</h3>
-                        <p className="text-black mb-4">Let&apos;s chat about how we can help you bring your ideas to life.</p>
+                        <h3 className="font-bold text-lg mb-4 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">Got a project in mind?</h3>
+                        <p className="mb-4 bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">Let's chat about how we can help you bring your ideas to life.</p>
                         <Button asChild className="bg-black text-white hover:bg-gray-400 hover:text-black">
                             <Link href="/contact">Connect</Link>
                         </Button>
@@ -62,9 +62,9 @@ export default function Footer() {
 
                 <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-black">
                     <Link href="/" className="mb-4 md:mb-0">
-                        <span className="text-2xl font-bold text-black">TK.</span>
+                        <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
                     </Link>
-                    <div className="text-sm text-black space-x-1">
+                    <div className="text-sm bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent space-x-1">
                         <span>Powered by</span>
                         <Link href="https://nextjs.org" className="font-medium hover:text-gray-900">
                             Next.js
@@ -82,7 +82,7 @@ export default function Footer() {
                             Framer Motion
                         </Link>
                     </div>
-                    <div className="mt-4 md:mt-0 text-sm text-black">© G. Teja Karthik. 2025</div>
+                    <div className="mt-4 md:mt-0 text-sm bg-gradient-to-r from-black via-gray-800 to-black bg-clip-text text-transparent">© G. Teja Karthik. 2025</div>
                 </div>
             </div>
         </footer>

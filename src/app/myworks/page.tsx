@@ -6,7 +6,7 @@ export default function TermsPage() {
         <div>
             <MyWork />
             <Link href="/app">
-                Go back to Home
+              
             </Link>
         </div>
     );

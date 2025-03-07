@@ -37,12 +37,14 @@ const LoadingText = ({ text }: { text: string }) => {
 
 export default function Loading() {
   const [progress, setProgress] = useState(0)
+  const [fadeOut, setFadeOut] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) => {
         if (prevProgress >= 100) {
           clearInterval(timer)
+          setTimeout(() => setFadeOut(true), 500) // Delay fade-out after reaching 100%
           return 100
         }
         return prevProgress + 2
@@ -53,7 +55,12 @@ export default function Loading() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden z-20">
+    <motion.div
+      className="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden z-20"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: fadeOut ? 0 : 1 }}
+      transition={{ duration: 0.8 }}
+    >
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
         initial={{ opacity: 0 }}
@@ -107,6 +114,6 @@ export default function Loading() {
           Progress: {progress}%
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }

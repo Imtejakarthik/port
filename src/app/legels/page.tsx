@@ -6,7 +6,7 @@ export default function TermsPage() {
         <div>
             <Legels />
             <Link href="/app">
-                Go back to Home
+                
             </Link>
         </div>
     );

@@ -1,5 +1,5 @@
-"use client"
-
+// Replace the existing social media links div in the footer section with:
+<div></div>
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { Instagram, Github, Linkedin, X } from "lucide-react"
@@ -40,7 +40,7 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
                 {/* Header */}
                 <div className="p-8 flex justify-between items-center border-b border-white/10">
                     <Link href="/" className="text-white text-2xl font-bold">
-                        TK.
+                        <img src="/logo.png" alt="Logo" className="h-8" />
                     </Link>
                     <div className="flex items-center gap-4">
                         <Link href="/contact" className="bg-white text-black px-6 py-2 rounded-full text-sm">
@@ -100,17 +100,17 @@ export default function Menu({ isOpen, onClose }: MenuProps) {
                         <div>
                             <h3 className="text-white text-xl font-bold mb-4">Follow us</h3>
                             <div className="flex gap-4">
-                                <Link href="https://www.instagram.com/tejakarthik.gubbala/" className="text-muted-foreground hover:text-foreground">
+                                <Link href="https://www.instagram.com/tejakarthik.gubbala/" className="text-muted-foreground hover:text-pink-500">
                                     <button title="Instagram">
                                         <Instagram className="h-6 w-6" />
                                     </button>
                                 </Link>
-                                <Link href="https://github.com/Imtejakarthik" className="text-muted-foreground hover:text-foreground">
+                                <Link href="https://github.com/Imtejakarthik" className="text-muted-foreground hover:text-purple-500">
                                     <button title="GitHub">
                                         <Github className="h-6 w-6" />
                                     </button>
                                 </Link>
-                                <Link href="https://www.linkedin.com/in/teja-karthik-b87824259/" className="text-muted-foreground hover:text-foreground">
+                                <Link href="https://www.linkedin.com/in/teja-karthik-b87824259/" className="text-muted-foreground hover:text-blue-500">
                                     <button title="LinkedIn">
                                         <Linkedin className="h-6 w-6" />
                                     </button>

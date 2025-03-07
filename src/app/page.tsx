@@ -1,8 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import Loading from "@/components/loading"
+import { motion, AnimatePresence } from "framer-motion"
+import dynamic from "next/dynamic"
+
+const Loading = dynamic(() => import("@/components/loading"), { ssr: false })
 import Header from "@/components/header"
 import Menu from "@/components/menu"
 import Hero from "@/components/hero"
@@ -18,14 +20,16 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem("hasVisited")
+    const hasVisited = typeof window !== "undefined" && localStorage.getItem("hasVisited")
 
     if (hasVisited) {
       setIsLoading(false)
     } else {
       setTimeout(() => {
         setIsLoading(false)
-        localStorage.setItem("hasVisited", "true")
+        if (typeof window !== "undefined") {
+          localStorage.setItem("hasVisited", "true")
+        }
       }, 2000)
     }
   }, [])
@@ -52,7 +56,20 @@ export default function Home() {
           <Projects />
           <Testimonials />
           <Footer />
-          <SocialIcons />
+          
+          {/* Animate SocialIcons */}
+          <AnimatePresence>
+            {!isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                <SocialIcons />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </div>
     </>

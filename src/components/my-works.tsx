@@ -16,70 +16,72 @@ type Project = {
 };
 
 const projects: Project[] = [
+
   {
-    title: "rumi",
+    title: "UrbanPulse",
     description:
-      "An AI-driven e-learning platform empowering learners with personalized courses, interactive AI mentors, and adaptive learning paths for skill mastery.",
-    image: "/rumi.png",
-    tech: "Next.js, Typescript, Tailwind CSS, Shadcn/UI, MongoDB, Firebase, Sanity",
-    date: "December 2023",
+      "A real-time city analytics dashboard that tracks traffic, pollution, and public sentiment using IoT and social media data.",
+    image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b",
+    tech: "Vue.js, D3.js, Express, MongoDB, AWS Lambda",
+    date: "December 2024",
   },
   {
-    title: "EcoTrack",
-    description: "A sustainability tracking app that helps users monitor their carbon footprint and suggests eco-friendly alternatives for daily activities.",
-    image: "/eco.png",
-    tech: "React Native, Redux, Node.js, Express, PostgreSQL",
-    date: "November 2023",
+    title: "FitSphere",
+    description:
+      "A fitness app with AR workouts, personalized nutrition plans, and social challenges to keep users motivated.",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+    tech: "React Native, ARKit, GraphQL, PostgreSQL, TailwindCSS",
+    date: "November 2024",
   },
   {
-    title: "SmartHome Hub",
-    description: "An IoT platform for managing smart home devices with real-time monitoring, automation rules, and energy optimization features.",
-    image: "/smart-home.png",
-    tech: "React.js, Socket.io, Python, MongoDB, AWS IoT",
-    date: "October 2023",
+    title: "StoryWeaver",
+    description:
+      "An interactive storytelling platform where users collaborate with AI to write and illustrate dynamic narratives.",
+    image: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d",
+    tech: "Next.js, Typescript, Stable Diffusion, Sanity, Vercel",
+    date: "October 2024",
   },
   {
-    title: "HealthSync",
-    description: "A healthcare management system connecting patients with doctors, featuring telemedicine, appointment scheduling, and medical records.",
-    image: "/health.png",
-    tech: "Vue.js, Django, PostgreSQL, WebRTC, Docker",
-    date: "September 2023",
+    title: "GreenGrid",
+    description:
+      "A renewable energy management tool that optimizes home solar and wind power usage with predictive analytics.",
+    image: "https://images.unsplash.com/photo-1509395062183-67c5ad6faff9",
+    tech: "Angular, Python, Flask, Redis, Google Cloud",
+    date: "September 2024",
+  },
+
+  {
+    title: "ShopSphere",
+    description:
+      "An e-commerce platform with virtual try-on features using AR and AI-powered product recommendations.",
+    image: "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49",
+    tech: "Svelte, WebXR, Node.js, MongoDB, Stripe",
+    date: "July 2024",
   },
   {
-    title: "CryptoVault",
-    description: "A secure cryptocurrency wallet and trading platform with real-time market analysis and portfolio management tools.",
-    image: "/crypto.png",
-    tech: "Next.js, Web3.js, Solidity, Firebase, TailwindCSS",
-    date: "August 2023",
+    title: "TravelTales",
+    description:
+      "A travel planning app with AI-curated itineraries, real-time local insights, and a photo-sharing community.",
+    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1",
+    tech: "React Native, Firebase, Google Maps API, NestJS",
+    date: "June 2024",
   },
   {
-    title: "CodeMentor",
-    description: "An interactive coding education platform with AI-powered code reviews, peer learning, and real-time collaboration features.",
-    image: "/code.png",
-    tech: "React, GraphQL, Node.js, MongoDB, Azure",
-    date: "July 2023",
+    title: "CodeSphere",
+    description:
+      "A gamified coding platform with AI mentors, competitive challenges, and real-time code collaboration.",
+    image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2",
+    tech: "Next.js, GraphQL, Prisma, Azure, TailwindCSS",
+    date: "May 2024",
   },
   {
-    title: "TaskFlow",
-    description: "A project management tool with automated workflow optimization, team collaboration, and resource allocation features.",
-    image: "/task.png",
-    tech: "Angular, NestJS, PostgreSQL, Redis, Docker",
-    date: "June 2023",
+    title: "SoundScape",
+    description:
+      "A music creation tool powered by AI, allowing users to generate unique tracks and collaborate with artists.",
+    image: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1",
+    tech: "React, Tone.js, Python, AWS S3, Supabase",
+    date: "April 2024",
   },
-  {
-    title: "FoodieFind",
-    description: "A restaurant discovery app with AI-powered recommendations, real-time reservations, and social sharing features.",
-    image: "/food.png",
-    tech: "React Native, Firebase, Google Maps API, Node.js",
-    date: "May 2023",
-  },
-  {
-    title: "ArtVerse",
-    description: "A digital art marketplace powered by blockchain, featuring NFT creation, trading, and virtual gallery experiences.",
-    image: "/art.png",
-    tech: "Next.js, Ethereum, IPFS, Three.js, TailwindCSS",
-    date: "April 2023",
-  }
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -135,19 +137,20 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 export default function ProjectShowcase() {
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
+      {/* Header */}
       <header className="p-8 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold hover:opacity-80">
-          TK.
+        <Link href="/">
+          <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
         </Link>
         <div className="flex gap-4">
-          <Button asChild variant="outline" className="bg-white text-black rounded-full">
+          <Button variant="outline" className="bg-white hover:bg-white/80 text-black px-6 py-2 rounded-full text-sm" asChild>
             <Link href="/contact">Connect</Link>
           </Button>
-          <Button asChild className="hover:bg-white/10 rounded-full">
+          <button onClick={() => {}} className="text-white p-2 hover:bg-white/10 rounded-full transition-colors" aria-label="Close menu">
             <Link href="/">
               <X className="w-6 h-6" />
             </Link>
-          </Button>
+            </button>
         </div>
       </header>
 
@@ -162,11 +165,80 @@ export default function ProjectShowcase() {
         </section>
       </main>
 
-      <footer className="border-t border-gray-800 py-20 px-6">
+      {/* Footer */}
+      <footer className="border-t border-gray-800 py-20 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-gray-400">
-            Powered by Next.js, Tailwind CSS, and Framer Motion. © 2025 G.Teja Karthik.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div>
+              <h3 className="text-lg font-medium mb-4">Information</h3>
+              <div className="w-full h-px bg-gray-800 mb-4" />
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/aboutme" className="hover:opacity-80">About</Link>
+                </li>
+                <li>
+                  <Link href="/process" className="hover:opacity-80">Process</Link>
+                </li>
+                <li>
+                  <Link href="/myworks" className="hover:opacity-80">Work</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium mb-4">Connect</h3>
+              <div className="w-full h-px bg-gray-800 mb-4" />
+              <ul className="space-y-2">
+                <li>
+                  <Link href="https://www.instagram.com/tejakarthik.gubbala/" className="hover:opacity-80">Instagram</Link>
+                </li>
+                <li>
+                  <Link href="https://github.com/Imtejakarthik" className="hover:opacity-80">GitHub</Link>
+                </li>
+                <li>
+                  <Link href="https://www.linkedin.com/in/teja-karthik-b87824259/" className="hover:opacity-80">LinkedIn</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium mb-4">Legal</h3>
+              <div className="w-full h-px bg-gray-800 mb-4" />
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/legels" className="hover:opacity-80">Terms & Conditions</Link>
+                </li>
+                <li>
+                  <Link href="/privacypolicy" className="hover:opacity-80">Privacy Policy</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium mb-4">Got a project in mind?</h3>
+              <div className="w-full h-px bg-gray-800 mb-4" />
+              <p className="mb-4 text-gray-400">Let's chat about how we can help you bring your ideas to life.</p>
+              <Button variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
+                <Link href="/contact">Connect</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="mt-20 pt-8 border-t border-gray-800 relative">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent glow-effect" />
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <Link href="/">
+                <img src="/logo.png" alt="Logo" className="h-8 w-auto" />
+                </Link>
+              <div className="text-sm text-gray-400">
+                <span>Powered by </span>
+                <Link href="#" className="hover:opacity-80">Next.js</Link>
+                <span> and </span>
+                <Link href="#" className="hover:opacity-80">Sanity</Link>
+                <span>. Styled with </span>
+                <Link href="#" className="hover:opacity-80">Tailwind CSS</Link>
+                <span> and </span>
+                <Link href="#" className="hover:opacity-80">Framer Motion</Link>
+              </div>
+              <div className="text-sm text-gray-400">© G.Teja Karthik 2025</div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
